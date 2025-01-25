@@ -1,20 +1,11 @@
 [package]
 name = "os-rust"
 version = "0.1.0"
-edition = "2021"
+edition = "2024"
 authors = ["Song Khoi   <songkhoi123@gmail.com>"]
 
-[target.x86_64-unknown-linux-gnu]
-rustflags = ["-C", "link-arg=-nostartfiles"]
-
-[target.x86_64-pc-windows-msvc]
-rustflags = ["-C", "link-args=/ENTRY:_start /SUBSYSTEM:console"]
-
-[target.x86_64-apple-darwin]
-rustflags = ["-C", "link-args=-e __start -static -nostartfiles"]
-
 [dependencies]
-
+bootloader = "0.9.29"
 
 [profile.dev]
 panic = "abort"
